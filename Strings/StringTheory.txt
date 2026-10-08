@@ -1,0 +1,35 @@
+=============================String===============================
+
+String --> String is a sequence of characters
+
+Immutable --> once created you can not change it.
+String object are immutable --> Once String object is created, you cannot change it. Even if you try to change it will create new object.
+
+How to create String:
+1. using literals --> String s = "";
+2. using new  --->    String s = new String("");
+
+-->If string created using literals object will be stored in a dedicated space inside heap memory.
+  space is (String constant pool) scp . It was not there in earlier version of java. 
+  
+    why java go with this approach ?
+---->  
+  
+                Using Literals
+				--------------
+  Before creating new object using literals it checks whether is there any Object with same value already created, if object created earlier means it will new object start referring the earlier object value instead of created new one.
+  
+  ex: String first  = "Kodewala";
+      *This object created inside SCP with address xyz123.
+      String second = "Kodewala";
+	  *THis checks is there any object created with same value , yes it is so , instead of created new object it refer the same address xyz123.
+	  
+	  To check address are same :
+	  if(first == second) -->this will result true if address is same
+	  
+	 #in String == operator is used check the address of the string obj.
+
+	  
+
+
+
