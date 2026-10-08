@@ -12,8 +12,11 @@ How to create String:
 -->If string created using literals object will be stored in a dedicated space inside heap memory.
   space is (String constant pool) scp . It was not there in earlier version of java. 
   
-    why java go with this approach ?
----->  
+    why java go with this Literal approach ?
+---->  For memory optimization using SCP
+
+    Why Java made string immutable?
+1. Memory Optimization
   
                 Using Literals
 				--------------
@@ -27,7 +30,9 @@ How to create String:
 	  To check address are same :
 	  if(first == second) -->this will result true if address is same
 	  
-	 #in String == operator is used check the address of the string obj.
+	 #in String '==' operator is used check the address of the string obj.
+	 
+	 
 
 	  
 
