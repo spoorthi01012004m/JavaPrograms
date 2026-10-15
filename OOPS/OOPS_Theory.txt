@@ -1,0 +1,80 @@
+============================OOPS====================================
+OOPS place a crucial role in LLD 
+It is a way of writing code using objects. 
+
+           static and instance initialization
+		   ----------------------------------
+		   
+//static initialization block (SIB)
+static
+{
+
+}
+*This SIB executes only once only when the class is initialized, usually when it is first actively used by the JVM.
+
+//instance initialization
+{
+}
+*When every object have a common function and logics instnce block is used because it will be created when and object is created.
+
+OOPs - It is a way of writing code using objects,it keeps code organize, so that the code will be reusable, modular, scalable, secure and maitainable
+
+* Reusable - Using the same code again 
+* Modular - Splits large program into smaller independent program 
+* Secure - Keep code secure 
+* scalable - 
+* maintainable -
+
+class - Blueprint of an idea 
+object - instance of a class
+
+Four pillars of oops:
+1. Encapsulation - Combine data andmethod as a unit
+2. Inheritance - code written by someone can be reused
+3. Polymorphism - act based on situation 
+4. Abstraction - Hide the implementation 
+
+
+============Encapsulation===============
+- Wrapping variables (data) + methods
+
+While writing a class it should achieve encapsulation otherwise it wil become loose code.
+Lets assume we have created a class with public data and some public method to modify the data but when another class using this class it can directly modify the data without implementing method 
+so, this is not a proper way to modify the data , it should be modified through methods
+Encapsulation says that nobody can change your data directly. Main purpose of encapsulation is to hide sensitive data or details while allowing the controlled access 
+
+To achieve encapsulation follow below rules :
+* Keep class data as private
+* Keep methods public to modify data through it 
+
+
+=============Inheritance===================
+Inheritance is a key concept in OOPs where inheritance allows a class to use properties and methods of an another class.
+
+Functionalities developed by parents class can be reused by child class.
+
+           |-----IS-A relation
+child ---->extends -----> parent
+ex :
+class parent{
+}
+class child extends parent{   // child have a properties of parent 
+}
+where child class can access all the attributes other than private and all the methods.
+
+what is the purpose of inheritance ?
+-- Inheritance allows to use the existing class instead of writing logics and everything from the scratch to while creating new class 
+
+why do we need inheritance ?
+-- code reusability this avoids code duplication and makes program more effiecient and easy maintainable , reduces time.
+-- Method overriding - with the help of inheritance we can modify or extend the functionality of the parent class in th child class.
+
+Terms used inheritance:
+* super class (parent)
+* sub class (child)
+
+
+
+
+
+

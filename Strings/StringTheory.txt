@@ -1,4 +1,4 @@
-=============================String===============================
+============================================================String============================================================================
 
 String --> String is a sequence of characters
 
@@ -31,10 +31,85 @@ How to create String:
 	  if(first == second) -->this will result true if address is same
 	  
 	 #in String '==' operator is used check the address of the string obj.
+	 #obj1.equals(obj2) method belongs to String class which was overridden the Object class method.
 	 
+	            Using 'new' Keyword
+				-------------------
+  ex:  String firstname = "raj";  ---> raj is literal
+       String secondName = new String("raj"); raj is also literal 
+	   When the object of String created using new keyword a copy of the value will be stored in SCP but object is created inside the heap area.
+	   In the above example even both content is same new secondName object will be created in heap memory because of new keyword.
+	 #in String '==' operator is used check the address of the string obj.
+	 #obj1.equals(obj2) method belongs to String class which was overridden the Object class method.
 	 
 
-	  
+Some rules in strings to remeber:
+---------------------------------
+1. String s = "practice" --> this is created using literal and only one object will be stored in SCP.
+2. String s = new String("practice") --> This is using 'new' keyword , 'practice' is literal so 1 obj is creats in SCP but new keyword creates new obj and store it in heap ,now s is reference heap obj.
+3. String s = "Hello" + "World" --> when 2 words are literal with + symbol then it will become one obj by combining "Helloworld".
+4. String s1 = "practice" --> s.equals(s1) -->this checks the content of the objects if both are same, returns true.
+5. s == s1 --> this checks references, if both are referring same then returns true, else false
+6. In SCP before creating obj it checks, whether is there any obj with the same content or not, if so it start referring the existing one instead of creating new one.
+7. String obj created using new keyword , always creates new obj even if any objects exists with same content.
+
+
+        ==========String Intern=========================
+		
+		
+1. If content already there in SCP it will return the reference , otherwise it copy and start referring to SCP.
+2. 
+
+ex:
+String s = "Java";
+String s1 = new String("Java");
+s1.intern();
+system.out.println(s == s1) --> this returns true . If copy of the content is already exist in SCP and you are using intern for object with same content then refer the same obj in SCP, then both s and s1 reference address become same.
+
+
+ex: 
+String s = new String("ja") + new String("va");// "ja" obj -1 in SCP, "va" obj -1 in SCP, "java" obj one in heap 
+s.intern();
+String s1 = "java"
+syso(s1 == s) //returns false 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=====================================StringBuilder================================
+
+-- When string need to modify the content , not possible with strings so,
+  This can be done by using StringBuilder and StringBuffer
+  
+to use StringBuilder :
+StringBuilder sb  = new StringBuilder("");
+-It just allow us to change the existing objects
+
+Key Features of StringBuilder:
+
+* Strings are mutable
+* No thread safety , not have overhead of synchronised method
+* Performance is faster
+* Suitable for single threaded usage
+
+- To add strings or elements sb.append() is used
 
 
 
