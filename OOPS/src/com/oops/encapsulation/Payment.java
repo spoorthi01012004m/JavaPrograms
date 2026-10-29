@@ -15,6 +15,7 @@ public class Payment {
 	//setter
 	public void doCredit(int _amount) {
 		balance = balance + _amount;
+		
 	}
 	
 	//getter method to get the value modified through methods
