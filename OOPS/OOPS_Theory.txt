@@ -1,10 +1,10 @@
-============================OOPS====================================
+============================================= OOPS =============================================
 OOPS place a crucial role in LLD 
 It is a way of writing code using objects. 
 
            static and instance initialization
 		   ----------------------------------
-		   
+		                              
 //static initialization block (SIB)
 static
 {
@@ -23,10 +23,10 @@ OOPs - It is a way of writing code using objects,it keeps code organize, so that
 * Modular - Splits large program into smaller independent program 
 * Secure - Keep code secure 
 * scalable - 
-* maintainable -
+* maintainable - 
 
 class - Blueprint of an idea 
-object - instance of a class
+object - instance of a class 
 
 Four pillars of oops:
 1. Encapsulation - Combine data andmethod as a unit
@@ -35,7 +35,7 @@ Four pillars of oops:
 4. Abstraction - Hide the implementation 
 
 
-============Encapsulation===============
+===================================== Encapsulation ========================================
 - Wrapping variables (data) + methods
 
 While writing a class it should achieve encapsulation otherwise it wil become loose code.
@@ -48,7 +48,7 @@ To achieve encapsulation follow below rules :
 * Keep methods public to modify data through it 
 
 
-=============Inheritance===================
+====================================== Inheritance ==========================================
 Inheritance is a key concept in OOPs where inheritance allows a class to use properties and methods of an another class.
 
 Functionalities developed by parents class can be reused by child class.
@@ -63,7 +63,7 @@ class child extends parent{   // child have a properties of parent
 where child class can access all the attributes other than private and all the methods.
 
 what is the purpose of inheritance ?
--- Inheritance allows to use the existing class instead of writing logics and everything from the scratch to while creating new class 
+-- Inheritance allows to use the existing class instead of writing logics and everything from the scratch while creating new class 
 
 why do we need inheritance ?
 -- code reusability this avoids code duplication and makes program more effiecient and easy maintainable , reduces time.
@@ -72,6 +72,224 @@ why do we need inheritance ?
 Terms used inheritance:
 * super class (parent)
 * sub class (child)
+
+-Disadvantage of inheritance:
+* Heavy loading of all the parent class
+* Tight couple 
+
+Type of Inheritance:
+1. single  - one parent , one child 
+2. multilevel - one parent , more than one level child
+3. hierarchical - one class parent , more than one child class inherit parent properties
+4. multiple  - more than one parent , one child class  ----> This creates ambiguity so, it doesn't works in java (this problem is called Daimond problem or DOD).
+5. Hybrid - mixture of all other types
+
+##Diamond problem or DOD problem --> Arises because of multiple inheritance ambiguity 
+
+
+
+
+===================================== Abstraction =======================================
+
+Hiding information
+
+- Exposing required functionalities and hide the core functionalities.
+
+
+Task :
+write a program and achieve abstraction
+
+requirement:
+- Place order will be used by other classes to place an order
+- Hide the core functionalities and expose only required functionality
+- Explore if core functionalities are exposed to other classes and do the impact analysis.
+
+ 
+======================================= Method Overriding =======================================
+
+rules:
+* Method name should be same
+* Argument order, number and  type should be same 
+* Return type should be same except covariant 
+* access modifier should be same or widen
+* cannot overriding static method 
+
+=====Method Overloading 
+Works in same class, class can have multiple version of same method 
+
+Rules:
+Same class
+* Same method name 
+* number , order and type of args should be different 
+* access modifier can be  different or same 
+
+
+=================================== Polymorphism ===========================================
+- polymorphism means may form or many behaviour ,in java same methods behaves differently based on the object calling.
+- It will allows you to perform same functionality in different ways.
+- poly - many, morphism - behaves
+
+
+use of polymorphism:
+* makes code more flexible
+* code reusability 
+
+Points to remember in polymorphism :
+1. Method resolution at compile time: The compiler checks for the method existance in the given reference.
+2. Method execution at runtime: method calls depends on the actuall object.
+
+================================ Types of polymorphism ==========================================
+
+1. Compile-Time polymorphism(Method overloading):
+-  This can be achieved by defining multiple methods with the same name,
+	but varies in parameters( number of para, type of para, order of para),
+	this happens with in the same class, means multiple versions of methods are declared with the same name;
+	
+Up casting and Down casting
+---------------------------
+
+Assume 
+class A(parent){
+
+ //parent class method 
+  public void printFun(){
+   system.out.println("A.printFun().....parent");
+   }
+} 
+class B(child) extends A(parent){
+
+  //parent class method is overridden 
+  @Override
+  public void printFun(){
+  system.out.println("B.printFun()......Child");
+  }
+}
+
+public class Driver{
+ public static void main(String args[]){
+  // new B(); //this also legal way to call object 
+  A obj1 = new B(); // calling child class object using parent class reference 
+                    // This is auto up casting 
+					
+  B obj2 = new B();
+  
+  obj1.printFun();
+  B obj3 = new A(); // This is not possible in java , creates ClassCastException 
+  B obj4 = (B)obj1; // in this way down casting can be done in java 
+  obj4.printFun();  //calling overridden method of an object
+      }
+  }
+ 
+ 
+Main points to remeber :
+* Compile time : When we try to creat object first it checks is there any with that name in the class if that method does not present in that class it shows compilation error.
+* Runtime : When the object created after compilation it looks for particular object method then executes.
+
+
+=========================================SOLID PRINCIPLE===================================================
+
+S --> Single Responsibility 
+
+O --> open / close -- open for enhancement and closed for modification
+ write a code to onboard new class without canging the existing system 
+ 
+ 
+L -->
+I -->
+D -->
+
+
+
+
+=============================================Interface===========================================================
+- Interface tells what need to be done , it depends on the classes , how it is getting implemented.
+- It will not have any logic, but if any class implementing this interface then it should implement all the methods of interface it is like an agreement.
+- Interface have only abstract.
+  
+ In java version 1.7 or 7 version or before interface by default it consider all the methods as public abstract even if we don't mention it.
+ 
+problem with java 7 0r before:
+If anything added after years or new feature came then it would impact on all the classes which implements interface.
+Assume some features added after some years in TicketBooking then it was forcing all the classes which are implementing it.
+--drawback is even if class do not need that feature implement forces that to implement all the methods.
+
+
+To overcome this in java 8 version 'default' key word is introduced 
+-by mentioning default in method that method will become optional body need to be implements
+ ex -- public default void addUpgrade(){
+        }
+		
+		Backward Compatibility  - if we are adding new feature that should not disturb the existing feature
+       ------------------------
+
+- One more feature added in java 8 :
+  Assume all child classes required to use print() method with same logic but again it will take time if we write this methods in every class.
+  So, to avoid this in java 8 static method is introduced - this static method is included in interface with complete body, 
+  it can act as common method or utility method to all child classes.
+ 
+ 
+####Alert#####
+Again there is a disadvantage in java 8
+* Assume you two default class in interface which are doing different function but commonly they are connecting to DB to get some data.
+  to connect to DB it 25 lines of code is required this will be repeated if we  need to connect to DB. 
+  Again it takes more time to write more number of lines 
+  
+   ------ To overcome this in "java 9 private method" is introduced -----
+
+Java - 9
+Types of interface:
+1. Normal interface --> more than one abstract method.
+
+2. Marker interface --> It is an empty interface used as marker interface/ tag interface.
+  - This help us to perform special activity(activity which required permission)
+  - This is also called Tag interface
+  - Special activities are serialization, cloning(copy of object) 
+  - Cloneable and Serialization are two interface without any methods a class which implements this interfaces means they are 
+     giving permission to other classes or same class to copy the obj.
+  - 'instanceof' -> this key tells u does obj is a particular instance of parent and also used to check obj is permitted to clone.
+	
+3. functional interface --> If interface got only one abstract method then it is called functional interface  (SAM) - Single abstract method. 
+   it was introduced in java 8 to implement 'labmda expression'(implement the method without method name).
+   annotation to use this --> @FunctionalInterface (introduced in java 8)
+   (Developer must be interested in HOW part)
+   
+   - If SAM extends another interface which include one abstract method , then it cannot be a SAM
+   
+                  ===============Lambda Expression=====================
+        implement function or method without name.
+		It reduces the length of code  implementing 
+		
+		
+		
+4. Nested interface ---> 
+
+ 
+             ==================serialization==================
+ Process of writing  to bytestream so that it can be transfered over the network store to database and write to  file system.
+
+
+serialization:
+FileOutputStream -> provide file name 
+ObjectOutputStream -> Provide obj of FileOutputStream
+using writeObject() method of ObjectInputStream write comtent or provide object of Class.
+
+deserialization:
+FileInputStream  -> Provide complete directory of this file 
+ObjectInputStream -> provide obj of FileInputStream
+by using readObject() method of ObjectInputStream class read content of file and point it by creating Class reference.
+while reading content that need to be downcasted because it refers to Object class before downcasting.
+
+--If some sensitive data is there in object that we can't transform that can declared as 'private transient ' in class.
+--serialVersionUID = it  is used to  give ID to the class which implements serialization , if any changes happens and it gives diferent ID each time.
+  private static final Long serialVersionUID();
+  
+--If we are creating serialization and deserialization in different java project then you need to make sure to hve same package in deserialization
+  
+   
+  
+
+	
+
 
 
 
