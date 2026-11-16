@@ -1,0 +1,46 @@
+1. What is the difference between interpeter and JIT  ..?
+2. Explain serialization?
+3. what is the difference between private and static method in interface?
+4. what are the ways to crete string obj?
+5. what is the difference btw abstract class and interface?
+6. what is the need of overriding.?
+7. if we make stringbuilder as final what will happen?
+8. why we use @override annotation?
+9. explain the rules of method overriding?
+10. difference btw interface and class ?
+11. in which situation we can use interface ..?
+12. what is diamond problem ?
+13. what is difference btw final, finnay, finalize?
+14. Can string object cloned ..?
+15. what s the need of lambda abstraction?
+16. what is serializable exception.?
+17. Assume one variable there in parent class and one in object class , in driver when we call object with parent reference what will happen?
+18. why only widening acess modifier why not narrow it ?--- narrowing against the oops concept 
+19. what is the purpose of private method in java ?
+20. what r the type of inheritance.?
+21. explain marker interface , what is the purpose of marker interface ?
+22. how marker interface internally works?
+23. how will you modify encapsulated variable?
+24. what is the diff btw super() and this()?
+25. explain covariant return type?
+26. what is the need of eclipse?
+27. what is serialVersionUID.. ?
+28. difference btw StringBuilder and StringBuffer ?
+29. how can we achieve compile time polymorphism ?
+30. can interface extend fun interface ?
+31. what is the purpose of cloning ?
+32. what is the need of down casting in cloning?
+33. can u give example of marker interface?
+34. can u explain all type of interfaces ?
+35. what is the need of String ?
+36. why marker interface called as tag interface ?
+37. what is dynamic method dispatching ..?
+38. static methods  in both parent and child class which method will be executted in upcasting ?
+39. what is ClassCastException ?
+40. *how does JVM and JIT works together ?
+41. single time design 
+42. if we make any variable transient and if we try to get that in deserialization what will happen?
+43. why do we use two ways to create string object?
+44. Do we need to keep same serialVersionUID in all nested classes ?
+45. which cloning method is reduceses memory usage ?
+46. Disadvantage of inheritance ?

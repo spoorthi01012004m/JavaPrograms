@@ -1,6 +1,27 @@
 ============================================= OOPS =============================================
 OOPS place a crucial role in LLD 
-It is a way of writing code using objects. 
+It is a way of writing program using objects.
+
+=======================constructor================================
+
+The constructor is a special type of method in java, which is used to initialize objects. 
+Main purpose is to set the initial value for the object attributes.
+
+* Constructor should have same name as class
+* There is no return type 
+* it is called only once when an obj is created. 
+
+super()---> calls parent class constructor 
+this() ---> calls same class constructor 
+ 
+ ==============> constructor chaining....
+It is the process of calling one constructor from another , used to reuse code and reduce redundancy 
+1. with in the same class - this()
+2. from parent class - super()
+
+purpose :
+--> In some situation there is requirement of default values or custom values , so instead of writing new code we use constructor
+
 
            static and instance initialization
 		   ----------------------------------
@@ -15,7 +36,7 @@ static
 //instance initialization
 {
 }
-*When every object have a common function and logics instnce block is used because it will be created when and object is created.
+*When every object have a common function and logics instadnce block is used because it will be created when and object is created.
 
 OOPs - It is a way of writing code using objects,it keeps code organize, so that the code will be reusable, modular, scalable, secure and maitainable
 
@@ -195,7 +216,9 @@ O --> open / close -- open for enhancement and closed for modification
  
  
 L -->
+
 I -->
+
 D -->
 
 
@@ -230,8 +253,8 @@ To overcome this in java 8 version 'default' key word is introduced
  
 ####Alert#####
 Again there is a disadvantage in java 8
-* Assume you two default class in interface which are doing different function but commonly they are connecting to DB to get some data.
-  to connect to DB it 25 lines of code is required this will be repeated if we  need to connect to DB. 
+* Assume there are two default class in interface which are doing different function, but commonly they are connecting to DB to get some data.
+  to connect to DB, 25 lines of code is required this will be repeated if we  need to connect to DB. 
   Again it takes more time to write more number of lines 
   
    ------ To overcome this in "java 9 private method" is introduced -----
@@ -279,14 +302,74 @@ ObjectInputStream -> provide obj of FileInputStream
 by using readObject() method of ObjectInputStream class read content of file and point it by creating Class reference.
 while reading content that need to be downcasted because it refers to Object class before downcasting.
 
---If some sensitive data is there in object that we can't transform that can declared as 'private transient ' in class.
+--If some sensitive data is there in object that we can't transform that can be declared as 'private transient ' in class.
 --serialVersionUID = it  is used to  give ID to the class which implements serialization , if any changes happens and it gives diferent ID each time.
   private static final Long serialVersionUID();
   
 --If we are creating serialization and deserialization in different java project then you need to make sure to hve same package in deserialization
   
+         ==========================Cloning=====================================
+		 
+copying the object 
+
+1. Shallow cloning -> one level copying(it just copy the current object not the nested objects)
+   Shallow copy gives only level it just copies the reference of the nested object but doesn't copy it 
+   Let's assume we have Employee class and Address class , Employee class has-a Adress class , now if we try to clone the employee orignal obj then,
+   it just copies the  object of Employee and reference of Adress not the object of it. 
+
+   ##Alert### 
+   By default shallow copy occurs
+   
+2. Deep cloning  ->
+
+  
    
   
+  
+  
+  
+What is the biggest challenge you have faced ?
+- Memory leaks in Java ? ---- > OutOfMemoryError
+
+--- unused obj available in java that creates memory leaks in java 
+
+how to check heap size  ?
+
+Go to run as configuration - > arguments - > VM args(used to give input to JVM)
+
+JAVA_OPTS -> it is a environmental variable acts as VM args , this tells JVM how to run an application speacially regarding memory, GC, debugging etc.
+-Heap size - > -Xms1024m -Xmx2024m
+
+Some parameters are :
+                        example
+                       ---------
+initial heap memory = -Xms1024m
+maximum heap memory = -Xmx2024m
+stack size per thread = -Xss512k 
+
+==>to check the memory use Runtime class 
+Runtime : This is a java class which gives information about and controll over the current Java Runtime environment 
+
+-- how to ivercome OutOfMemoryError
+* Increase the heap size
+* Restart the application  - workaround 
+
+###Alert####
+ permanenet solution ---->THREAD DUMP - it tells when OutOFMemoryError occured it captures all the states of threads or thread dump 
+ We can give this thread Dump condition in java OPTS   (thread dump will be stored in heap dump)
+ 
+
+
+
+==================================================Exception Handling===============================================================
+--Abnormal situation occurs during program execution 
+
+
+1. In java if something is'null' and trying access it and operate it , it throws NullPointerException.
+2. ArrayIndexOutOfBoundException - when we try to access index which is not there.
+3. Airthematic Exception - when number divided by zero 
+4. NumberFormatException 
+
 
 	
 

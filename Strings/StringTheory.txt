@@ -54,7 +54,7 @@ Some rules in strings to remeber:
 7. String obj created using new keyword , always creates new obj even if any objects exists with same content.
 
 
-        ==========String Intern=========================
+        ==========String Intern============
 		
 		
 1. If content already there in SCP it will return the reference , otherwise it copy and start referring to SCP.
