@@ -1,0 +1,16 @@
+# Java compiled files
+*.class
+bin/
+target/
+out/
+
+# JVM heap dumps and analysis files
+*.hprof
+*.index
+MemorySettings/heapdumps/
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
