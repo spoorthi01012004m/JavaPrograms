@@ -1,4 +1,4 @@
-package com.oops.encapsulation1;
+package com.oops.exception;
 
 class Account {
 	public void openAccount() {

@@ -315,12 +315,15 @@ copying the object
 1. Shallow cloning -> one level copying(it just copy the current object not the nested objects)
    Shallow copy gives only level it just copies the reference of the nested object but doesn't copy it 
    Let's assume we have Employee class and Address class , Employee class has-a Adress class , now if we try to clone the employee orignal obj then,
-   it just copies the  object of Employee and reference of Adress not the object of it. 
+   it just copies the  object of Employee and reference of Adress not the object of it.  
 
    ##Alert### 
    By default shallow copy occurs
    
-2. Deep cloning  ->
+2. Deep cloning  ->  As name says it copies object deeply , it copies outer layer of object and all the nested objects only if you manually allow nested classes to be copied by implementing Cloneable interface.
+    @Override
+    public Objects clone(Object obj){
+    return super.obj();
 
   
    
@@ -369,6 +372,16 @@ Runtime : This is a java class which gives information about and controll over t
 2. ArrayIndexOutOfBoundException - when we try to access index which is not there.
 3. Airthematic Exception - when number divided by zero 
 4. NumberFormatException 
+
+===> Exception Propagation : when Exception arises it throws an exception object if exception is not handling then it send that object to caller method , then main , then JVM then it terminates the further program.
+     To handle an exception we use, try{} catch{} block 
+	 try : this block includes risky code and if any exception arises it throws an exception object 
+	 catch : this block catches that exception object then prints the message if we give.
+	 
+	 While andling an object first it look for specific exception catch block then if it is not there then it look for it's parent exception catch block .
+	 
+	 when we are writing multiple catch block , then we should write it in sequence like child - > parent otherwise compiler shows child exceptions are unreachable 
+	 
 
 
 	
